@@ -3,67 +3,67 @@
 </p>
 
 
-## 🌟 Introduction
+## Introduction
 
-**Dungeon Chronicles: Shadows of Fate** is a text-based role-playing game where players embark on an epic journey through dungeons 🏰, battling monsters 🐉, collecting treasures 💎, and upgrading their characters ⚔️. The game combines classic RPG elements with modern software design patterns for a seamless and engaging experience.
+**Dungeon Chronicles: Shadows of Fate** is a text-based role-playing game where players embark on an epic journey through dungeons, battling monsters, collecting treasures, and upgrading their characters. The game combines classic RPG elements with modern software design patterns for a seamless and engaging experience.
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- 🛡️ **Choose from three unique character classes:** Warrior, Mage, and Archer.
-- 🏞️ **Procedurally generated dungeons** with increasing difficulty.
-- ⚔️ **Dynamic combat system** with flexible strategies and monster AI.
-- 🔥 **Upgradeable weapons and items** with special effects.
+- **Choose from three unique character classes:** Warrior, Mage, and Archer.
+- **Procedurally generated dungeons** with increasing difficulty.
+- **Dynamic combat system** with flexible strategies and monster AI.
+- **Upgradeable weapons and items** with special effects.
 
 ---
 
 ## 🎮 Gameplay Mechanics
 
-### 🧙‍♂️ Character Creation
+### Character Creation
 
 Players can select a character class, each with unique abilities and starting stats. Choose wisely to match your preferred playstyle:
 
-- 🛡️ **Warrior:** High health and melee damage.
-- 🔮 **Mage:** Powerful spells but low physical defense.
-- 🏹 **Archer:** Balanced attack range and agility.
+- **Warrior:** High health and melee damage.
+- **Mage:** Powerful spells but low physical defense.
+- **Archer:** Balanced attack range and agility.
 
-### 🗺️ Exploration
+### Exploration
 
-Navigate through interconnected dungeons filled with traps, treasures, and monsters. Each room offers choices that impact your journey, including hidden paths 🛤️ and puzzles 🧩.
+Navigate through interconnected dungeons filled with traps, treasures, and monsters. Each room offers choices that impact your journey, including hidden paths and puzzles.
 
-### ⚔️ Combat System
+### Combat System
 
 Engage in turn-based combat using a variety of strategies:
 
-- ⚔️ **Attack:** Direct damage to enemies.
-- 🛡️ **Defend:** Reduce incoming damage.
-- 🧴 **Use Item:** Heal or gain buffs using inventory items.
-- 🌟 **Special Abilities:** Unique to your character class.
+- **Attack:** Direct damage to enemies.
+- **Defend:** Reduce incoming damage.
+- **Use Item:** Heal or gain buffs using inventory items.
+- **Special Abilities:** Unique to your character class.
 
-### 📦 Inventory Management
+### Inventory Management
 
 Collect treasures and items during your journey. The inventory system allows you to:
 
-- 🗡️ Equip and upgrade weapons and armor.
-- 💊 Use consumables for health and buffs.
-- 📂 Manage limited space strategically.
+- Equip and upgrade weapons and armor.
+- Use consumables for health and buffs.
+- Manage limited space strategically.
 
 ---
 
 ## 🚀 Advanced Features
 
-### 🎚️ Levels and Difficulty Scaling
+### Levels and Difficulty Scaling
 
-Dungeons become progressively more challenging, introducing tougher monsters 👹 and complex layouts. Rewards also scale, ensuring a satisfying progression system.
+Dungeons become progressively more challenging, introducing tougher monsters and complex layouts. Rewards also scale, ensuring a satisfying progression system.
 
-### 🏰 Dungeon System
+### Dungeon System
 
-Dungeons are built using the Builder and Composite design patterns, creating a structured yet randomized experience. Explore multi-room dungeons with varied layouts and hidden secrets 🔐.
+Dungeons are built using the Builder and Composite design patterns, creating a structured yet randomized experience. Explore multi-room dungeons with varied layouts and hidden secrets.
 
-### ⚡ Special Weapon Enhancements
+### Special Weapon Enhancements
 
-Use the Decorator pattern to upgrade weapons with effects like fire 🔥, ice ❄️, or poison 🧪. These enhancements provide strategic advantages in combat.
+Use the Decorator pattern to upgrade weapons with effects like fire, ice, or poison. These enhancements provide strategic advantages in combat.
 
 ---
 
@@ -71,9 +71,9 @@ Use the Decorator pattern to upgrade weapons with effects like fire 🔥, ice �
 
 ### Available Character Classes
 
-- **Warrior:** 🛡️ Starting Stats: High health, medium damage. Abilities: Shield Bash, Berserk Rage.
-- **Mage:** 🔮 Starting Stats: Low health, high damage. Abilities: Fireball, Teleport.
-- **Archer:** 🏹 Starting Stats: Balanced health and damage. Abilities: Precision Shot, Dodge.
+- **Warrior:** Starting Stats: High health, medium damage. Abilities: Shield Bash, Berserk Rage.
+- **Mage:** Starting Stats: Low health, high damage. Abilities: Fireball, Teleport.
+- **Archer:** Starting Stats: Balanced health and damage. Abilities: Precision Shot, Dodge.
 
 ---
 
@@ -102,7 +102,7 @@ Earn XP by defeating monsters and completing dungeons to unlock upgrades.
 
 ## 🛠️ Developer Notes
 
-**Dungeon Chronicles: Shadows of Fate** was created to showcase modern software design patterns in an engaging RPG format. The game is designed to be scalable, making it an excellent foundation for future expansions and features. Enjoy your adventure! 🎉
+**Dungeon Chronicles: Shadows of Fate** was created to showcase modern software design patterns in an engaging RPG format. The game is designed to be scalable, making it an excellent foundation for future expansions and features. Enjoy your adventure! 
 
 ---
 
