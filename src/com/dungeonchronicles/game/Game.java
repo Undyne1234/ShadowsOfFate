@@ -1,5 +1,6 @@
 package com.dungeonchronicles.game;
 
+import com.dungeonchronicles.ui.UserInteraction;
 import com.dungeonchronicles.states.*;
 import com.dungeonchronicles.dungeon.DungeonBuilder;
 import com.dungeonchronicles.dungeon.Dungeon;
@@ -10,6 +11,7 @@ public class Game {
         GameStateManager manager = new GameStateManager();
         DungeonBuilder builder = new DungeonBuilder();
         Inventory inventory = new Inventory();
+        UserInteraction userInteraction = new UserInteraction();
 
         Dungeon dungeon = builder.buildSampleDungeon();
         manager.changeState(new MainMenuState());
@@ -17,15 +19,28 @@ public class Game {
         boolean isRunning = true;
         while (isRunning) {
             manager.executeState();
+            userInteraction.displayMessage("What would you like to do next?");
 
-            // Example transitions (replace with real input logic):
-            manager.changeState(new ExplorationState());
-            dungeon.display();
-            inventory.addItem("Golden Sword");
-            manager.changeState(new CombatState());
-            inventory.displayInventory();
-            manager.changeState(new GameOverState());
-            isRunning = false;
+            // Example of user input handling:
+            String action = userInteraction.getInput("Choose an action: Explore (E), Fight (F), Quit (Q)");
+
+            switch (action.toUpperCase()) {
+                case "E":
+                    manager.changeState(new ExplorationState());
+                    dungeon.display();
+                    break;
+                case "F":
+                    manager.changeState(new CombatState());
+                    inventory.addItem("Golden Sword");
+                    inventory.displayInventory();
+                    break;
+                case "Q":
+                    manager.changeState(new GameOverState());
+                    isRunning = false;
+                    break;
+                default:
+                    userInteraction.displayMessage("Invalid choice, try again.");
+            }
         }
     }
 }
