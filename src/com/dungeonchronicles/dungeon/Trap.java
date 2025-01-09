@@ -1,6 +1,6 @@
 package com.dungeonchronicles.dungeon;
 
-public class Trap extends DungeonComponent {
+public class Trap implements DungeonComponent {
     private final String description;
 
     public Trap(String description) {

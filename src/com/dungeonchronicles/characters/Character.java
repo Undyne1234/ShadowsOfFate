@@ -1,19 +1,41 @@
 package com.dungeonchronicles.characters;
 
 public abstract class Character {
-    protected String name;
     protected int health;
-    protected int attack;
+    protected int attackPower;
     protected int defense;
+    protected String name;
 
-    public abstract void display();
+    public abstract void attack(Character defender);
+    public abstract void defend();
+    public abstract void useSpecialAbility();
 
-    // Common methods
-    public void takeDamage(int damage) {
-        this.health -= damage;
-        if (this.health < 0) this.health = 0;
+    public int getHealth() {
+        return health;
     }
-    public boolean isAlive() {
-        return this.health > 0;
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getAttackPower() {
+        return attackPower;
+    }
+
+    public void setAttackPower(int attackPower) {
+        this.attackPower = attackPower;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
+
+    @Override
+    public String toString() {
+        return name + " (HP: " + health + ")";
     }
 }

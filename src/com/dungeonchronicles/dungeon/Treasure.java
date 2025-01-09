@@ -1,6 +1,6 @@
 package com.dungeonchronicles.dungeon;
 
-public class Treasure extends DungeonComponent {
+public class Treasure implements DungeonComponent {
     private final String name;
 
     public Treasure(String name) {

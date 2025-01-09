@@ -1,46 +1,33 @@
 package com.dungeonchronicles.game;
 
-import com.dungeonchronicles.ui.UserInteraction;
-import com.dungeonchronicles.states.*;
-import com.dungeonchronicles.dungeon.DungeonBuilder;
-import com.dungeonchronicles.dungeon.Dungeon;
-import com.dungeonchronicles.inventory.Inventory;
-
+import com.dungeonchronicles.states.GameState;
+import com.dungeonchronicles.states.MainMenuState;
+import com.dungeonchronicles.states.GameStateManager;
+import com.dungeonchronicles.characters.Character;
 public class Game {
+    private static Character player;  // Static variable to hold the selected player
+
     public static void main(String[] args) {
         GameStateManager manager = new GameStateManager();
-        DungeonBuilder builder = new DungeonBuilder();
-        Inventory inventory = new Inventory();
-        UserInteraction userInteraction = new UserInteraction();
+        GameState mainMenuState = new MainMenuState();
 
-        Dungeon dungeon = builder.buildSampleDungeon();
-        manager.changeState(new MainMenuState());
+        // Change to main menu state and start the game
+        manager.changeState(mainMenuState);
+        manager.executeState();
+    }
 
-        boolean isRunning = true;
-        while (isRunning) {
-            manager.executeState();
-            userInteraction.displayMessage("What would you like to do next?");
+    // Method to start the game with the selected player
+    public static void startGame(Character selectedPlayer) {
+        player = selectedPlayer;
+    }
 
-            // Example of user input handling:
-            String action = userInteraction.getInput("Choose an action: Explore (E), Fight (F), Quit (Q)");
+    // Method to get the current player
+    public static Character getPlayer() {
+        return player;
+    }
 
-            switch (action.toUpperCase()) {
-                case "E":
-                    manager.changeState(new ExplorationState());
-                    dungeon.display();
-                    break;
-                case "F":
-                    manager.changeState(new CombatState());
-                    inventory.addItem("Golden Sword");
-                    inventory.displayInventory();
-                    break;
-                case "Q":
-                    manager.changeState(new GameOverState());
-                    isRunning = false;
-                    break;
-                default:
-                    userInteraction.displayMessage("Invalid choice, try again.");
-            }
-        }
+    // Method to set a new player (optional)
+    public static void setPlayer(Character newPlayer) {
+        player = newPlayer;
     }
 }

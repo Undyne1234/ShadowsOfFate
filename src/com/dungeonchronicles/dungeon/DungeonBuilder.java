@@ -1,48 +1,27 @@
 package com.dungeonchronicles.dungeon;
 
+import java.util.Random;
+
 public class DungeonBuilder {
-    private Dungeon dungeon;
+    private final Dungeon dungeon = new Dungeon();
+    private static final Random random = new Random();
 
-    public DungeonBuilder() {
-        this.dungeon = new Dungeon();
-    }
-
-    public DungeonBuilder addRoom(String roomName) {
-        Room room = new Room(roomName);
-        dungeon.add(room);
-        return this;
-    }
-
-    public DungeonBuilder addTrap(String trapName) {
-        Trap trap = new Trap(trapName);
-        dungeon.add(trap);
-        return this;
-    }
-
-    public DungeonBuilder addTreasure(String treasureName) {
-        Treasure treasure = new Treasure(treasureName);
-        dungeon.add(treasure);
+    public DungeonBuilder addRoom(String name) {
+        if (random.nextInt(10) > 7) {
+            // Chance to add a monster room or treasure
+            if (random.nextBoolean()) {
+                dungeon.addRoom(new MonsterRoom(name));
+            } else {
+                dungeon.addRoom(new Treasure(name));
+            }
+        } else {
+            // Empty room or trap
+            dungeon.addRoom(new Room(name));
+        }
         return this;
     }
 
     public Dungeon build() {
-        return this.dungeon;
-    }
-
-    public Dungeon buildSampleDungeon() {
-        Room entrance = new Room("Entrance Hall");
-        Room treasureChamber = new Room("Treasure Chamber");
-        Room bossRoom = new Room("Boss Lair");
-        Trap spikedPitfall = new Trap("Spiked Pitfall");
-        Treasure goldenChest = new Treasure("Golden Chest");
-
-        dungeon.add(entrance);
-        dungeon.add(treasureChamber);
-        dungeon.add(bossRoom);
-        dungeon.add(spikedPitfall);
-        dungeon.add(goldenChest);
-
         return dungeon;
     }
 }
-

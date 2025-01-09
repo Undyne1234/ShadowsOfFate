@@ -1,25 +1,51 @@
 package com.dungeonchronicles.dungeon;
-
+import com.dungeonchronicles.characters.Character;
+import com.dungeonchronicles.states.CombatState;
+import com.dungeonchronicles.states.GameStateManager;
+import com.dungeonchronicles.ui.UserInteraction;
+import com.dungeonchronicles.characters.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
-public class Dungeon extends DungeonComponent {
-    private final List<DungeonComponent> components = new ArrayList<>();
+import static com.dungeonchronicles.game.Game.getPlayer;
 
-    @Override
-    public void add(DungeonComponent component) {
-        components.add(component);
+public class Dungeon {
+    private final List<DungeonComponent> rooms = new ArrayList<>();
+    private int currentRoomIndex = 0;
+    private boolean isBossRoomGenerated = false;
+    private UserInteraction userInteraction = new UserInteraction();
+
+    public void addRoom(DungeonComponent room) {
+        rooms.add(room);
     }
 
-    @Override
-    public void remove(DungeonComponent component) {
-        components.remove(component);
-    }
+    public void explore() {
+        Random rand = new Random();
+        while (currentRoomIndex < rooms.size()) {
+            DungeonComponent currentRoom = rooms.get(currentRoomIndex);
+            currentRoom.display();
 
-    @Override
-    public void display() {
-        for (DungeonComponent component : components) {
-            component.display();
+            // Random chance of a boss room
+            if (!isBossRoomGenerated && rand.nextInt(10) > 7) {
+                rooms.add(new BossRoom("The Boss Room"));
+                isBossRoomGenerated = true;
+                userInteraction.displayMessage("A Boss Room has appeared!");
+            }
+
+            // Random chance of combat or empty room
+            if (rand.nextInt(2) == 0) {
+                // Empty room or trap
+                userInteraction.displayMessage("You find an empty room or trap.");
+            } else {
+                // Combat
+                userInteraction.displayMessage("A monster appears!");
+                CombatState combatState = new CombatState(getPlayer(), rand.nextBoolean() ? new Monster() : new Boss());
+                GameStateManager manager = new GameStateManager();
+                manager.changeState(combatState);
+                manager.executeState();
+            }
+            currentRoomIndex++;
         }
     }
 }

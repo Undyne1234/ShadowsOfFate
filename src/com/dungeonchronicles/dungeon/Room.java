@@ -1,6 +1,6 @@
 package com.dungeonchronicles.dungeon;
 
-public class Room extends DungeonComponent {
+public class Room implements DungeonComponent {
     private final String name;
 
     public Room(String name) {
