@@ -1,14 +1,35 @@
 package com.dungeonchronicles.dungeon;
 
-public class Room implements DungeonComponent {
-    private final String name;
+import java.util.Random;
 
-    public Room(String name) {
-        this.name = name;
+public class Room {
+    private boolean isMonsterRoom;
+    private boolean containsHealingFountain;
+    private boolean isEmpty;
+
+    public Room() {
+        // Randomly determine what kind of room this is
+        Random rand = new Random();
+
+        // 30% chance to be a monster room
+        this.isMonsterRoom = rand.nextInt(10) < 3;
+
+        // 30% chance to contain a healing fountain (if not a monster room)
+        this.containsHealingFountain = !isMonsterRoom && rand.nextInt(10) < 3;
+
+        // If it isn't a monster room or a fountain, it is empty
+        this.isEmpty = !isMonsterRoom && !containsHealingFountain;
     }
 
-    @Override
-    public void display() {
-        System.out.println("Room: " + name);
+    public boolean isMonsterRoom() {
+        return isMonsterRoom;
+    }
+
+    public boolean containsHealingFountain() {
+        return containsHealingFountain;
+    }
+
+    public boolean isEmpty() {
+        return isEmpty;
     }
 }

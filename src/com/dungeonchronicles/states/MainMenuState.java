@@ -4,6 +4,8 @@ import com.dungeonchronicles.characters.Character;
 import com.dungeonchronicles.ui.UserInteraction;
 import com.dungeonchronicles.game.Game;
 
+import static com.dungeonchronicles.game.Game.getPlayer;
+
 public class MainMenuState implements GameState {
     private UserInteraction userInteraction = new UserInteraction();
     private CharacterSelect characterSelect = new CharacterSelect();
@@ -26,7 +28,7 @@ public class MainMenuState implements GameState {
                 userInteraction.displayMessage("You will play as: \n" + playerCharacter);
 
                 // After character selection, transition to the ExplorationState (dungeon)
-                GameState explorationState = new ExplorationState();
+                GameState explorationState = new ExplorationState(playerCharacter);
                 GameStateManager manager = new GameStateManager();
                 manager.changeState(explorationState);
                 manager.executeState();

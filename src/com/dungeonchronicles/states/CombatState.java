@@ -6,6 +6,8 @@ import com.dungeonchronicles.combat.CombatStrategy;
 
 import java.util.Random;
 
+import static com.dungeonchronicles.game.Game.getPlayer;
+
 public class CombatState implements GameState {
     private UserInteraction userInteraction = new UserInteraction();
     private CombatStrategy combatStrategy;
@@ -25,13 +27,13 @@ public class CombatState implements GameState {
     @Override
     public void execute() {
         // Display initial HP
-        System.out.println("Your HP: " + player.getHealth());
-        System.out.println("Monster HP: " + monster.getHealth());
+        System.out.println(player.getName() + " HP: " + player.getHealth());
+        System.out.println( monster.getName() + " HP: " + monster.getHealth());
 
         // Combat loop while both player and monster are alive
         while (player.getHealth() > 0 && monster.getHealth() > 0) {
             // Display current HP for both player and monster
-            System.out.println("\nYour HP: " + player.getHealth() + " | Monster HP: " + monster.getHealth());
+            System.out.println("\n" + player.getName() + "'s HP: " + player.getHealth() + " | " + monster.getName() + "'s HP: " + monster.getHealth());
 
             // Player's turn
             System.out.println("Options: ");
@@ -86,7 +88,7 @@ public class CombatState implements GameState {
                 System.out.println("You defeated the monster!");
                 // Transition to the next room or end combat
                 GameStateManager manager = new GameStateManager();
-                manager.changeState(new ExplorationState());
+                manager.changeState(new ExplorationState(player));
                 break;
             }
 

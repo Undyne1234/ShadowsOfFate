@@ -16,7 +16,7 @@ public class DungeonBuilder {
             }
         } else {
             // Empty room or trap
-            dungeon.addRoom(new Room(name));
+            dungeon.addRoom((DungeonComponent) new Room());
         }
         return this;
     }

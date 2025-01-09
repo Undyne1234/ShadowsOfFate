@@ -34,7 +34,7 @@ public class Dungeon {
             }
 
             // Random chance of combat or empty room
-            if (rand.nextInt(2) == 0) {
+            if (rand.nextInt(2) == 1) {
                 // Empty room or trap
                 userInteraction.displayMessage("You find an empty room or trap.");
             } else {

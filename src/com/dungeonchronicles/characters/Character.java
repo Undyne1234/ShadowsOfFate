@@ -14,6 +14,10 @@ public abstract class Character {
         return health;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setHealth(int health) {
         this.health = health;
     }

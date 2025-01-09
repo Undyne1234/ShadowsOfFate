@@ -2,6 +2,8 @@ package com.dungeonchronicles.dungeon;
 
 import com.dungeonchronicles.characters.Boss;
 import com.dungeonchronicles.characters.Character;
+import com.dungeonchronicles.characters.Monster;
+import com.dungeonchronicles.characters.MonsterFactory;
 import com.dungeonchronicles.states.CombatState;
 import com.dungeonchronicles.states.GameStateManager;
 import com.dungeonchronicles.ui.UserInteraction;
@@ -23,7 +25,7 @@ public class BossRoom implements DungeonComponent {
 
         // Start combat with the boss
         Character player = getPlayer(); // Assuming you have a method to get the player
-        Boss boss = new Boss();
+        Monster boss = MonsterFactory.createRandomBoss();
 
         // Initiating Combat
         CombatState combatState = new CombatState(player, boss);
