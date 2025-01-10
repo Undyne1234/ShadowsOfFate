@@ -116,8 +116,12 @@ This game was developed by:
 - **Wesley de Ruiter**  
   Email: [ruit0041@hz.nl](mailto:ruit0041@hz.nl)
 
+### Cooperation between developers
+![image](https://github.com/user-attachments/assets/04e0a274-4084-493d-85b8-a237a2e11b1f)
+
 ---
 
 ## ⚠️ Disclaimer
 
 This game and all associated content are the intellectual property of the developers. Unauthorized distribution, reproduction, or modification is strictly prohibited. For inquiries, please contact the developers via their respective emails.
+
