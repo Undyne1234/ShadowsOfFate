@@ -105,16 +105,69 @@ Earn XP by defeating monsters and completing dungeons to unlock upgrades.
 **Dungeon Chronicles: Shadows of Fate** was created to showcase modern software design patterns in an engaging RPG format. The game is designed to be scalable, making it an excellent foundation for future expansions and features. Enjoy your adventure! 
 
 ---
-
 ## 👩‍💻 Developers
 
-This game was developed by:
+This game is being developed by:
 
 - **Fatimah Abbasi**  
-  Email: [abba0005@hz.nl](mailto:abba0005@hz.nl)
+  Email: [abba0005@hz.nl](mailto:abba0005@hz.nl)  
+  
+  ### Focus: Game Core and Infrastructure
+  
+  #### Key Responsibilities:
+  - **Game State Management**  
+    - Implement the State pattern for various game states (e.g., MainMenu, Exploration, Combat, GameOver).  
+    - Manage transitions between states based on user input or game events.
+  
+  - **Dungeon Creation**  
+    - Build the dungeon system using the Builder and Composite patterns.  
+    - Represent dungeon structures with rooms, traps, treasures, and monsters using a tree-like model.
+  
+  - **Inventory System**  
+    - Design and implement features for adding/removing items and displaying inventory contents.  
+    
+  - **Save/Load Functionality**  
+    - Develop functionality to save and resume the game's state.
+  
+  - **Game Loop**  
+    - Create a loop to manage transitions between states and call appropriate methods.
+
+---
 
 - **Wesley de Ruiter**  
-  Email: [ruit0041@hz.nl](mailto:ruit0041@hz.nl)
+  Email: [ruit0041@hz.nl](mailto:ruit0041@hz.nl)  
+  
+  ### Focus: Gameplay and User Interaction
+  
+  #### Key Responsibilities:
+  - **Character Creation**  
+    - Use the Abstract Factory pattern to generate character types (e.g., Warrior, Mage, Archer) with predefined stats and gear.  
+    
+  - **Combat System**  
+    - Implement the Strategy pattern for various combat actions (Attack, Defend, Use Item).  
+    - Design AI behaviors for monsters (e.g., Aggressive, Defensive).
+  
+  - **Enhancements and Effects**  
+    - Add dynamic features to characters and weapons using the Decorator pattern (e.g., enchanted weapons).  
+    
+  - **User Interaction**  
+    - Create a text-based UI for smooth character selection, exploration, and combat interactions.
+  
+  - **Level Progression**  
+    - Scale monster difficulty and treasures as players advance.
+
+---
+
+## 🔗 Collaboration Points
+
+- **Integration**:  
+  Ensure Fatimah’s dungeon system seamlessly interacts with Wesley’s combat and exploration mechanics.
+
+- **Testing**:  
+  Collaborate on testing the overall game flow and resolving any issues.
+
+- **Documentation**:  
+  Maintain clear code documentation and use a shared repository for version control.
 
 ---
 
